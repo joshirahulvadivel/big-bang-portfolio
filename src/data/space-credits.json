@@ -1,0 +1,67 @@
+[
+  {
+    "id": "earth-day",
+    "title": "Blue Marble Next Generation, August",
+    "credit": "NASA Earth Observatory (Reto Stöckli)",
+    "source": "https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/",
+    "files": [
+      "/space/earth-day-4096.jpg",
+      "/space/earth-day-2048.jpg"
+    ]
+  },
+  {
+    "id": "earth-night",
+    "title": "Black Marble 2016: Earth at Night",
+    "credit": "NASA Earth Observatory (Joshua Stevens, Miguel Román)",
+    "source": "https://science.nasa.gov/earth/earth-observatory/earth-at-night/maps",
+    "files": [
+      "/space/earth-night-2048.jpg"
+    ]
+  },
+  {
+    "id": "moon",
+    "title": "CGI Moon Kit, LROC colour map",
+    "credit": "NASA's Scientific Visualization Studio (LRO data: NASA/GSFC/Arizona State University)",
+    "source": "https://svs.gsfc.nasa.gov/4720",
+    "files": [
+      "/space/moon-1024.jpg"
+    ]
+  },
+  {
+    "id": "cmb",
+    "title": "WMAP nine-year microwave sky (ILC map)",
+    "credit": "NASA / WMAP Science Team",
+    "source": "https://lambda.gsfc.nasa.gov/product/wmap/dr5/m_images.html",
+    "files": [
+      "/space/cmb-2048.jpg"
+    ]
+  },
+  {
+    "id": "carina",
+    "title": "James Webb Space Telescope NIRCam Image of the “Cosmic Cliffs” in Carina Nebula",
+    "credit": "NASA, ESA, CSA, STScI, Webb ERO Production Team",
+    "source": "https://images.nasa.gov/details/carina_nebula",
+    "files": [
+      "/space/carina-720.jpg"
+    ]
+  },
+  {
+    "id": "whirlpool",
+    "title": "Whirlpool Galaxy",
+    "credit": "NASA and The Hubble Heritage Team STScI/AURA Acknowledgement: N. Scoville Caltech and T. Rector NOAO",
+    "source": "https://images.nasa.gov/details/PIA04230",
+    "files": [
+      "/space/whirlpool-720.jpg"
+    ]
+  },
+  {
+    "id": "deep-field",
+    "title": "Webb_first_deep_field_SMACS_0723",
+    "credit": "NASA, ESA, CSA, STScI, Webb ERO Production Team",
+    "source": "https://images.nasa.gov/details/webb_first_deep_field",
+    "files": [
+      "/space/deep-field-2048.jpg",
+      "/space/deep-field-720.jpg"
+    ]
+  }
+]

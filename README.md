@@ -55,7 +55,7 @@ are needed. The chapters and their cosmic ages are defined in `src/lib/story.ts`
 | Command | What it does |
 | --- | --- |
 | `pnpm install` | Install dependencies |
-| `pnpm dev` | Run the dev server at http://localhost:3000 |
+| `pnpm dev` | Run the dev server |
 | `pnpm build` | Production build |
 | `pnpm start` | Serve the production build |
 | `pnpm lint` | Lint |

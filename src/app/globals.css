@@ -102,3 +102,21 @@ html.lenis body {
   0%, 100% { transform: scaleY(0.35); }
   50% { transform: scaleY(1); }
 }
+
+/* Phones: a soft dark backdrop keeps text readable over the planet and Earth */
+@media (max-width: 767px) {
+  .phone-scrim {
+    position: relative;
+    isolation: isolate;
+  }
+  .phone-scrim::before {
+    content: "";
+    position: absolute;
+    inset: -32px -20px;
+    z-index: -1;
+    pointer-events: none;
+    background: rgb(7 8 11 / 0.6);
+    -webkit-mask-image: linear-gradient(transparent, #000 56px, #000 calc(100% - 56px), transparent);
+    mask-image: linear-gradient(transparent, #000 56px, #000 calc(100% - 56px), transparent);
+  }
+}

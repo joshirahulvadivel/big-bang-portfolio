@@ -41,7 +41,7 @@ type Role = (typeof experience)[number];
 export function RoleBlock({ role, current }: { role: Role; current?: boolean }) {
   return (
     <Reveal>
-      <div className="grid gap-4 border-t border-line py-10 sm:grid-cols-[150px_minmax(0,1fr)] sm:gap-10">
+      <div className="grid gap-4 border-t border-line py-10 lg:grid-cols-[150px_minmax(0,1fr)] lg:gap-10">
         <div className="text-sm">
           <p className={current ? "text-accent" : "text-muted"}>{role.period}</p>
           {current && (

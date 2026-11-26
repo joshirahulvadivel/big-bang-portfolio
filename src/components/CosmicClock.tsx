@@ -33,7 +33,7 @@ export default function CosmicClock() {
       initial={{ opacity: 0 }}
       animate={introDone ? { opacity: 1 } : {}}
       transition={{ duration: 1, delay: 1.8 }}
-      className="pointer-events-none fixed bottom-6 left-5 z-40 hidden select-none sm:left-10 md:block"
+      className="pointer-events-none fixed bottom-6 left-5 z-40 hidden select-none sm:left-10 lg:block"
       aria-hidden
     >
       <p className="text-[10px] uppercase tracking-[0.28em] text-muted">Time since the Big Bang</p>

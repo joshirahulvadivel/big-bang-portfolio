@@ -55,7 +55,7 @@ export default function SoundToggle() {
       aria-pressed={on}
       aria-label={on ? "Turn sound off" : "Turn sound on"}
       data-cursor={on ? "Mute" : "Sound"}
-      className="fixed bottom-6 right-5 z-40 flex items-center gap-3 rounded-full border border-line-strong bg-bg/50 px-4 py-2.5 text-[10px] uppercase tracking-[0.25em] text-muted backdrop-blur-md transition-colors hover:text-text sm:right-10"
+      className="fixed bottom-6 right-5 z-40 flex h-10 w-10 items-center justify-center gap-3 rounded-full border border-line-strong bg-bg/50 sm:h-auto sm:w-auto sm:px-4 sm:py-2.5 text-[10px] uppercase tracking-[0.25em] text-muted backdrop-blur-md transition-colors hover:text-text sm:right-10"
     >
       <span className="flex h-3 items-end gap-[2px]" aria-hidden>
         {[0, 1, 2, 3].map((i) => (
@@ -66,7 +66,7 @@ export default function SoundToggle() {
           />
         ))}
       </span>
-      {on ? "Sound on" : "Sound off"}
+      <span className="hidden sm:inline">{on ? "Sound on" : "Sound off"}</span>
     </motion.button>
   );
 }

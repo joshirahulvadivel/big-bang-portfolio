@@ -107,7 +107,7 @@ export function EarthChapter() {
   return (
     <section id="earth" data-stage="5" className={shell}>
       <SectionFade className="mx-auto max-w-[1400px]">
-        <div className={column}>
+        <div className={`${column} phone-scrim`}>
           <ChapterHead
             index={5}
             title="A world takes shape:"

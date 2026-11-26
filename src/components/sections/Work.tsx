@@ -131,7 +131,7 @@ export default function Work() {
     <section id="work" data-stage="4" className="relative">
       {/* Desktop: pinned stage, the 3D gallery turns with scroll */}
       <div data-work={projects.length} className="relative hidden h-[260vh] md:block">
-        <PinnedFade className="sticky top-0 flex h-svh flex-col justify-between px-10 pb-10 pt-28">
+        <PinnedFade className="sticky top-0 flex h-svh flex-col justify-between px-10 pb-10 pt-28 lg:pb-32">
           <div className="mx-auto w-full max-w-[1400px]">
             <Eyebrow index="Chapter 04" sky="9.2 billion years after the Big Bang">The Sun · Selected work</Eyebrow>
             <h2 className="max-w-2xl font-serif text-[clamp(2.2rem,4vw,3.75rem)] leading-[1.02]">

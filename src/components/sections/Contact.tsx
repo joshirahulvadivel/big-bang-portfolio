@@ -7,7 +7,7 @@ import credits from "@/data/space-credits.json";
 export default function Contact() {
   return (
     <section id="now" data-stage="6" className="relative flex min-h-svh flex-col justify-between px-5 pt-32 sm:px-10">
-      <SectionFade className="mx-auto w-full max-w-[1400px]">
+      <SectionFade className="phone-scrim mx-auto w-full max-w-[1400px]">
         <div className="md:max-w-[56%]">
           <ChapterHead
             index={6}
@@ -16,8 +16,8 @@ export default function Contact() {
             sub="Earth's night side, lit by the cities where the work happens. The story so far, recognised and certified."
           />
         </div>
-        <div className="mt-14 grid gap-4 md:max-w-[52%] md:grid-cols-3">
-          <Reveal className="md:col-span-3">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 md:max-w-[52%] md:grid-cols-1 lg:grid-cols-3">
+          <Reveal className="sm:col-span-2 md:col-span-1 lg:col-span-3">
             <div className="glass relative overflow-hidden rounded-3xl p-7">
               <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/15 blur-3xl" />
               <p className="text-xs uppercase tracking-[0.28em] text-accent">Award</p>

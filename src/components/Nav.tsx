@@ -50,7 +50,7 @@ export default function Nav() {
             <span className="hidden sm:inline">{profile.name}</span>
           </a>
 
-          <div className="hidden items-center gap-10 text-sm md:flex">
+          <div className="hidden items-center gap-10 text-sm lg:flex">
             {links.map((l, i) => (
               <a key={l.href} href={l.href} className="group relative text-white/70 transition-colors hover:text-white">
                 <span className="mr-1.5 text-[10px] text-white/40">0{i + 1}</span>
@@ -60,8 +60,8 @@ export default function Nav() {
             ))}
           </div>
 
-          <div className="hidden items-center gap-6 text-sm md:flex">
-            <span className="text-white/50">
+          <div className="hidden items-center gap-6 text-sm lg:flex">
+            <span className="hidden text-white/50 xl:inline">
               <LocalTime />
             </span>
             <Magnetic>
@@ -75,7 +75,7 @@ export default function Nav() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
-            className="relative z-[60] flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-white/40 md:hidden"
+            className="relative z-[60] flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-white/40 lg:hidden"
           >
             <span className={`h-px w-4 bg-white transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
             <span className={`h-px w-4 bg-white transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
@@ -86,7 +86,7 @@ export default function Nav() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-40 flex flex-col justify-between bg-bg px-5 pb-10 pt-28 md:hidden"
+            className="fixed inset-0 z-40 flex flex-col justify-between bg-bg px-5 pb-10 pt-28 lg:hidden"
             initial={{ clipPath: "inset(0 0 100% 0)" }}
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}

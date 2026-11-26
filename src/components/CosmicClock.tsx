@@ -5,17 +5,39 @@ import { motion } from "framer-motion";
 import { ageAt, formatAge, yearAt } from "@/lib/story";
 import { scrollState, useUi } from "@/lib/store";
 
+/** Page elements the clock gives way to when they pass beneath it. */
+const TEXT = "p, h1, h2, h3, li, dt, dd, a, button, label, input, textarea, .glass";
+
 /** Bottom-left clock: time since the Big Bang for the current scroll position, and the career year beside it. */
 export default function CosmicClock() {
   const introDone = useUi((s) => s.introDone);
   const age = useRef<HTMLSpanElement>(null);
   const year = useRef<HTMLSpanElement>(null);
+  const box = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let raf = 0;
     let lastAge = "";
     let lastYear = "";
-    const tick = () => {
+    let lastCheck = 0;
+    let covered = false;
+    const tick = (now: number) => {
+      // fade out while page text or a card passes under the clock
+      if (box.current && now - lastCheck > 100) {
+        lastCheck = now;
+        const r = box.current.getBoundingClientRect();
+        const hit =
+          r.width > 0 &&
+          [0.1, 0.5, 0.9].some((fx) =>
+            [0.2, 0.8].some((fy) =>
+              document
+                .elementsFromPoint(r.left + r.width * fx, r.top + r.height * fy)
+                .some((el) => el.closest("main") && el.closest(TEXT)),
+            ),
+          );
+        if (hit !== covered) box.current.style.opacity = (covered = hit) ? "0" : "1";
+      }
+
       // during the opening, count up through the first second
       const a = scrollState.bang < 1 && scrollState.stage < 0.05 ? "0" : formatAge(ageAt(scrollState.stage));
       if (a !== lastAge && age.current) age.current.textContent = lastAge = a;
@@ -36,13 +58,15 @@ export default function CosmicClock() {
       className="pointer-events-none fixed bottom-6 left-5 z-40 hidden select-none sm:left-10 lg:block"
       aria-hidden
     >
-      <p className="text-[10px] uppercase tracking-[0.28em] text-muted">Time since the Big Bang</p>
-      <p className="mt-1 font-serif text-2xl text-text tabular-nums">
-        <span ref={age}>0</span>
-      </p>
-      <p className="mt-1 text-[10px] uppercase tracking-[0.28em] text-muted">
-        Career · <span ref={year} className="text-accent">—</span>
-      </p>
+      <div ref={box} className="transition-opacity duration-300">
+        <p className="text-[10px] uppercase tracking-[0.28em] text-muted">Time since the Big Bang</p>
+        <p className="mt-1 font-serif text-2xl text-text tabular-nums">
+          <span ref={age}>0</span>
+        </p>
+        <p className="mt-1 text-[10px] uppercase tracking-[0.28em] text-muted">
+          Career · <span ref={year} className="text-accent">—</span>
+        </p>
+      </div>
     </motion.div>
   );
 }

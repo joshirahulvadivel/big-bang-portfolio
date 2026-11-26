@@ -2,6 +2,7 @@ import { award, certifications, profile } from "@/content/site";
 import { Magnetic, Reveal, SectionFade, SplitWords } from "../fx";
 import ContactForm from "../ContactForm";
 import { ChapterHead } from "./ChapterParts";
+import { Avatar } from "./Portrait";
 import credits from "@/data/space-credits.json";
 
 export default function Contact() {
@@ -38,6 +39,9 @@ export default function Contact() {
       </SectionFade>
       <div id="contact" className="h-24" />
       <SectionFade last className="mx-auto flex w-full max-w-[1400px] flex-1 flex-col items-center justify-center text-center">
+        <Reveal className="mb-8">
+          <Avatar />
+        </Reveal>
         <Reveal>
           <p className="mb-8 text-xs uppercase tracking-[0.28em] text-muted">
             <span className="text-accent">What&apos;s next</span> · Contact

@@ -1,6 +1,7 @@
 import { competencies, education, experience, languages, profile, stats, tools } from "@/content/site";
 import { Reveal, SectionFade } from "../fx";
 import { ChapterHead, RoleBlock } from "./ChapterParts";
+import { Portrait } from "./Portrait";
 
 // experience is newest first: [Associate PM, Team Lead, Senior Moderator, Moderator]
 const [apm, teamLead, seniorMod, moderator] = experience;
@@ -12,14 +13,20 @@ const column = "md:max-w-[56%]";
 export function FirstLight() {
   return (
     <section id="first-light" data-stage="1" className={shell}>
-      <SectionFade className="mx-auto max-w-[1400px]">
-        <div className={column}>
+      <SectionFade className="mx-auto grid max-w-[1400px] md:grid-cols-[minmax(0,56%)_minmax(0,1fr)] md:gap-x-12 lg:gap-x-20">
+        <div>
           <ChapterHead
             index={1}
             title="First light:"
             italic="where it started."
             sub="380,000 years in, the universe cooled enough for light to travel freely. My first light was a degree in information technology."
           />
+        </div>
+        {/* Phones: between heading and summary. Wider: beside the text. */}
+        <Reveal delay={0.1} className="mt-12 md:col-start-2 md:row-span-2 md:row-start-1 md:mt-0 md:pt-28">
+          <Portrait />
+        </Reveal>
+        <div>
           <Reveal delay={0.1}>
             <p className="mt-10 text-lg leading-relaxed text-text/80">{profile.summary}</p>
           </Reveal>

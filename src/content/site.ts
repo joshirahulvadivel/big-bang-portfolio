@@ -8,6 +8,8 @@ export const profile = {
   email: "joshirahulvadivel@gmail.com",
   linkedin: "https://in.linkedin.com/in/joshirahulvadivel",
   resume: "/joshirahul-vadivel-resume.pdf",
+  portrait: "/joshirahul-vadivel-portrait.webp",
+  avatar: "/joshirahul-vadivel-avatar.webp",
   headline: "Associate Project Manager · araCreate Group",
   contactNote:
     "Open to project, program and operations roles. Send a message below, or reach me by email or LinkedIn.",

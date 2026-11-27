@@ -60,6 +60,8 @@ are needed. The chapters and their cosmic ages are defined in `src/lib/story.ts`
 | `pnpm start` | Serve the production build |
 | `pnpm lint` | Lint |
 | `pnpm space:assets` | Download and resize the NASA imagery, and update its credits |
+| `pnpm preview` | Build for Cloudflare Workers and run it locally in the Workers runtime |
+| `pnpm deploy` | Build for Cloudflare Workers and deploy |
 
 ### Contact form
 
@@ -71,6 +73,18 @@ Copy `.env.example` to `.env.local` and fill in:
 
 Without these, the site still runs, and the form tells visitors to send an email
 instead.
+
+## Deploy
+
+The site runs on Cloudflare Workers through the
+[OpenNext adapter](https://opennext.js.org/cloudflare). Worker settings live in
+`wrangler.jsonc`. Cloudflare Workers Builds deploys each push to `main` with:
+
+- Build command: `npx opennextjs-cloudflare build`
+- Deploy command: `npx opennextjs-cloudflare deploy`
+
+In production, the contact form's keys are set as Worker secrets (Settings →
+Variables and Secrets), not in `.env.local`.
 
 ## Credits
 

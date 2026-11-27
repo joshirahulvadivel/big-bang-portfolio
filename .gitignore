@@ -43,3 +43,8 @@ next-env.d.ts
 
 # local working files
 .tmp/
+
+# cloudflare workers
+/.open-next/
+/.wrangler/
+.dev.vars
